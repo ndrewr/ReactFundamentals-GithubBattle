@@ -5,6 +5,7 @@ const Link = require('react-router').Link;
 const UserDetailsWrapper = require('./UserDetailsWrapper.jsx');
 const UserDetails = require('./UserDetails.jsx');
 const MainContainer = require('./MainContainer.jsx');
+const Loading = require('./Loading.jsx');
 
 function puke (obj) {
 	return <pre>{JSON.stringify(obj, null, '')}</pre>
@@ -12,7 +13,7 @@ function puke (obj) {
 
 const ConfirmBattle = function (props) {
 	return props.isLoading
-	? <p> LOADING </p>
+	? <Loading speed={800} text='WAITING'/>
 	: <MainContainer>
         <h1>Confirm Players</h1>
         <div className='col-sm-8 col-sm-offset-2'>
